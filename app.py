@@ -259,7 +259,7 @@ def main():
 
             
         # Create Final Container
-        if imcom_container != '' and title_container != '':
+        if imcom_title != '' and title != '':
 
             final_container = f"""
                                 {imcom_container}{title_container}
@@ -268,7 +268,7 @@ def main():
 
                                 """
             
-        elif imcom_container == '' and title_container != '':
+        elif imcom_title == '' and title != '':
             
             final_container = f"""
                                     {title_container}
@@ -277,7 +277,7 @@ def main():
 
                                     """
             
-        elif imcom_container == '' and title_container == '':
+        elif imcom_title == '' and title == '':
             
             final_container = f"""
                                     {style_container}
