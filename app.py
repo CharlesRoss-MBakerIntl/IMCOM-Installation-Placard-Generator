@@ -180,7 +180,7 @@ def main():
                                             'image': image_4,
                                             'link': link_4}
             
-                    if image_5 == '':
+                    if image_4 == '':
                         placard_info['placard_4']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/cb8f7627fb45439f97e73d92690ab023/data'
 
 
