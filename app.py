@@ -8,6 +8,13 @@ style_container = """
 
 
 <style>
+    .page_title {
+        font-weight: 300;
+        line-height: 120%;
+        margin: 20px 0;
+        text-shadow: 0 1px 5px rgba(0,0,0,.8);
+        text-transform: uppercase;
+    }
     .image-container {
         display: flex;
         flex-wrap: wrap;
@@ -61,96 +68,159 @@ style_container = """
 
 # Define the main function for the Streamlit app
 def main():
+
+    placard_info = {}
     
+
+
     st.title('IMCOM Installation Placard Generator')
 
     st.write("#")
 
+        
+    st.markdown("##### Select Placard Container Information")
+    st.write('######')
+    
+    
+    #FIRST PANEL?
+    first_panel = st.radio('Is this the first panel for the IMCOM Page:', ['Yes', 'No'])
+    
+    if first_panel == 'Yes':
+        
+        # IMCOM TITLE
+        imcom_title = st.text_input(label = "IMCOM Title", value = '', key = 'imcom_title', placeholder="Eg: Training, Sustainment, Readiness, Pacific, Europe")
 
-    with st.form("placard_form"):
+        st.write("#")
+
+    if first_panel == 'No':
+        imcom_title = ''
+
+
+    if first_panel:
         
-        st.write("Enter Title for Placards")
-        title = st.text_input(label = "Section Title", value = '', key = 'title')
-        
+        # IS this the first section of panels for the group
+        first_section = st.radio('Is this the first section of 6 installations for the group:', ['Yes', 'No'])
+
+        if first_section == "Yes":
+                
+                title = st.text_input(label = "Group Title", value = '', key = 'title', placeholder="Eg: AIGP Tier - Foundation Pathway, AIGP Tier - Gold, Local Portal")
+
+        if first_section == "No":
+            title = ''
+                
+                
+    if first_panel and first_section:   
+                
         st.write("#")
         st.write("#")
 
-        st.write("Enter information for Placard 1:")
+        st.markdown("##### Enter information for Installation 1:")
         name_1 = st.text_input(label="Installation Name", value="", key='name_1')
         image_1 = st.text_input(label="Image Link", value="", key='image_1')
         link_1 = st.text_input(label="Page Link", value="", key='link_1')
         
         st.write('#')
-
-        st.write("Enter information for Placard 2:")
-        name_2 = st.text_input(label="Installation Name", value="", key='name_2')
-        image_2 = st.text_input(label="Image Link", value="", key='image_2')
-        link_2 = st.text_input(label="Page Link", value="", key='link_2')
-
         st.write('#')
 
-        st.write("Enter information for Placard 3:")
-        name_3 = st.text_input(label="Installation Name", value="", key='name_3')
-        image_3 = st.text_input(label="Image Link", value="", key='image_3')
-        link_3 = st.text_input(label="Page Link", value="", key='link_3')
-
-        st.write("#")
-
-        st.write("Enter information for Placard 4:")
-        name_4 = st.text_input(label="Installation Name", value="", key='name_4')
-        image_4 = st.text_input(label="Image Link", value="", key='image_4')
-        link_4 = st.text_input(label="Page Link", value="", key='link_4')
-
-        st.write("#")
-
-        st.write("Enter information for Placard 5:")
-        name_5 = st.text_input(label="Installation Name", value="", key='name_5')
-        image_5 = st.text_input(label="Image Link", value="", key='image_5')
-        link_5 = st.text_input(label="Page Link", value="", key='link_5')
-
-        st.write("#")
-
-        st.write("Enter information for Placard 6:")
-        name_6 = st.text_input(label="Installation Name", value="", key='name_6')
-        image_6 = st.text_input(label="Image Link", value="", key='image_6')
-        link_6 = st.text_input(label="Page Link", value="", key='link_6')
-
-        st.write("#")
+        placard_info['placard_1'] = {'name': name_1,
+                                            'image': image_1,
+                                            'link': link_1}
+            
+        if image_1 == '':
+            placard_info['placard_1']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/e8aec440a8a747cebb25c4572c2d1ab2/data'
 
 
-        placard_info = {}
 
-        if name_1.strip() and image_1.strip() and link_1.strip():
-            placard_info['placard_1'] = {'name': name_1,
-                                         'image': image_1,
-                                         'link': link_1}
+        if name_1 and image_1 and link_1:
+            st.markdown("##### Enter information for Installation 2:")
+            name_2 = st.text_input(label="Installation Name", value="", key='name_2')
+            image_2 = st.text_input(label="Image Link", value="", key='image_2')
+            link_2 = st.text_input(label="Page Link", value="", key='link_2')
+            
+            st.write('#')
+            st.write('#')
 
-        if name_2.strip() and image_2.strip() and link_2.strip():
             placard_info['placard_2'] = {'name': name_2,
-                                         'image': image_2,
-                                         'link': link_2}
-
-        if name_3.strip() and image_3.strip() and link_3.strip():
-           placard_info['placard_3'] = {'name': name_3,
-                                         'image': image_3,
-                                         'link': link_3}
-
-        if name_4.strip() and image_4.strip() and link_4.strip():
-            placard_info['placard_4'] = {'name': name_4,
-                                         'image': image_4,
-                                         'link': link_4}
-
-        if name_5.strip() and image_5.strip() and link_5.strip():
-            placard_info['placard_5'] = {'name': name_5,
-                                         'image': image_5,
-                                         'link': link_5}
-
-        if name_6.strip() and image_6.strip() and link_6.strip():
-            placard_info['placard_6'] = {'name': name_6,
-                                         'image': image_6,
-                                         'link': link_6}
+                                            'image': image_2,
+                                            'link': link_2}
+            
+            if image_2 == '':
+                placard_info['placard_2']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/36536602c0c7482ea8ad5f5e6fbfb897/data'
 
 
+
+            if name_2 and image_2 and link_2:
+                st.markdown("##### Enter information for Installation 3:")
+                name_3 = st.text_input(label="Installation Name", value="", key='name_3')
+                image_3 = st.text_input(label="Image Link", value="", key='image_3')
+                link_3 = st.text_input(label="Page Link", value="", key='link_3')
+
+                st.write("#")
+                st.write("#")
+
+                placard_info['placard_3'] = {'name': name_3,
+                                            'image': image_3,
+                                            'link': link_3}
+            
+                if image_3 == '':
+                    placard_info['placard_3']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/8d8a7d38f08b40f09817be43e5acc42f/data'
+
+
+
+                if name_3 and image_3 and link_3:
+                    st.markdown("##### Enter information for Installation 4:")
+                    name_4 = st.text_input(label="Installation Name", value="", key='name_4')
+                    image_4 = st.text_input(label="Image Link", value="", key='image_4')
+                    link_4 = st.text_input(label="Page Link", value="", key='link_4')
+
+                    st.write("#")
+                    st.write("#")
+
+                    placard_info['placard_4'] = {'name': name_4,
+                                            'image': image_4,
+                                            'link': link_4}
+            
+                    if image_5 == '':
+                        placard_info['placard_4']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/cb8f7627fb45439f97e73d92690ab023/data'
+
+
+
+                    if name_4 and image_4 and link_4:
+                        st.markdown("##### Enter information for Installation 5:")
+                        name_5 = st.text_input(label="Installation Name", value="", key='name_5')
+                        image_5 = st.text_input(label="Image Link", value="", key='image_5')
+                        link_5 = st.text_input(label="Page Link", value="", key='link_5')
+
+                        st.write("#")
+                        st.write("#")
+
+                        placard_info['placard_5'] = {'name': name_5,
+                                            'image': image_5,
+                                            'link': link_5}
+            
+                        if image_5 == '':
+                            placard_info['placard_5']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/02e9aaaa4a5f4c22b7ce14420696cf0d/data'
+
+
+                        if name_5 and image_5 and link_5:
+                            st.markdown("##### Enter information for Installation 6:")
+                            name_6 = st.text_input(label="Installation Name", value="", key='name_6')
+                            image_6 = st.text_input(label="Image Link", value="", key='image_6')
+                            link_6 = st.text_input(label="Page Link", value="", key='link_6')
+
+                            st.write("#")
+                            st.write("#")
+
+                            placard_info['placard_6'] = {'name': name_6,
+                                            'image': image_6,
+                                            'link': link_6}
+            
+                            if image_6 == '':
+                                placard_info['placard_6']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/ddb6ac04beda46c2b0dfcd8d48b135f6/data'
+
+
+                            
+                            
         #Create DIV Container
         div_container = """
         <div class="image-container">
@@ -184,29 +254,52 @@ def main():
         <h4>{title}</h4>
         """
 
+        #Create IMCOM Title Container
+        imcom_container = f"""<h1 class="page_title">{imcom_title}</h1>"""
 
-           
-        # Create Final Container
-
-        final_container = f"""
-        
-        {title_container}
-        {style_container}
-        {div_container}
-
-        """
             
-        
+        # Create Final Container
+        if imcom_container != '' and title_container != '':
+
+            final_container = f"""
+                                {imcom_container}{title_container}
+                                {style_container}
+                                {div_container}
+
+                                """
+            
+        elif imcom_container == '' and title_container != '':
+            
+            final_container = f"""
+                                    {title_container}
+                                    {style_container}
+                                    {div_container}
+
+                                    """
+            
+        elif imcom_container == '' and title_container == '':
+            
+            final_container = f"""
+                                    {style_container}
+                                    {div_container}
+
+                                    """
+
+                            
+
+        if final_container != '':
+            submit = st.button("Generate Code")
+            
+            
+            if submit:
+                st.code(final_container)
+    
+    
     
 
+        
+
     
-        
-        submit = st.form_submit_button(label="Generate HTML Code")
-
-        
-
-    if submit:
-        st.code(final_container)
 
 
 
