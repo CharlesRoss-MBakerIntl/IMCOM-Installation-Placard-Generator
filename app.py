@@ -233,19 +233,21 @@ def main():
         #Add Code to DIV Container
         for key, value in placard_info.items():
 
-            placard = placard_info[key]
+            if placard_info[key]['name'] != "" and placard_info[key]['link'] != "":
 
-            placard_container = f"""
+                placard = placard_info[key]
 
-            <a href={placard['link']} class="image-link">
-                    <img src={placard['image']} alt="Image">
-                    <div class="overlay"></div>
-                    <div class="text-overlay">{placard['name']}</div>
-            </a>
+                placard_container = f"""
 
-            """
+                <a href={placard['link']} class="image-link">
+                        <img src={placard['image']} alt="Image">
+                        <div class="overlay"></div>
+                        <div class="text-overlay">{placard['name']}</div>
+                </a>
 
-            div_container += placard_container + "\n"
+                """
+
+                div_container += placard_container + "\n"
 
 
         #Close the DIV Container
