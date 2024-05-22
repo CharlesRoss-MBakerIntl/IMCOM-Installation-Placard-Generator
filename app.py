@@ -131,7 +131,7 @@ def main():
 
 
 
-        if name_1 and image_1 and link_1:
+        if name_1 and link_1:
             st.markdown("##### Enter information for Installation 2:")
             name_2 = st.text_input(label="Installation Name", value="", key='name_2')
             image_2 = st.text_input(label="Image Link", value="", key='image_2')
@@ -149,7 +149,7 @@ def main():
 
 
 
-            if name_2 and image_2 and link_2:
+            if name_2 and link_2:
                 st.markdown("##### Enter information for Installation 3:")
                 name_3 = st.text_input(label="Installation Name", value="", key='name_3')
                 image_3 = st.text_input(label="Image Link", value="", key='image_3')
@@ -167,7 +167,7 @@ def main():
 
 
 
-                if name_3 and image_3 and link_3:
+                if name_3 and link_3:
                     st.markdown("##### Enter information for Installation 4:")
                     name_4 = st.text_input(label="Installation Name", value="", key='name_4')
                     image_4 = st.text_input(label="Image Link", value="", key='image_4')
@@ -185,7 +185,7 @@ def main():
 
 
 
-                    if name_4 and image_4 and link_4:
+                    if name_4 and link_4:
                         st.markdown("##### Enter information for Installation 5:")
                         name_5 = st.text_input(label="Installation Name", value="", key='name_5')
                         image_5 = st.text_input(label="Image Link", value="", key='image_5')
@@ -202,7 +202,7 @@ def main():
                             placard_info['placard_5']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/02e9aaaa4a5f4c22b7ce14420696cf0d/data'
 
 
-                        if name_5 and image_5 and link_5:
+                        if name_5 and link_5:
                             st.markdown("##### Enter information for Installation 6:")
                             name_6 = st.text_input(label="Installation Name", value="", key='name_6')
                             image_6 = st.text_input(label="Image Link", value="", key='image_6')
