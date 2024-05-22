@@ -7,56 +7,60 @@ import re
 style_container = """
 
 <style>
-        .page_title {
-            font-weight: 300;
-            line-height: 120%;
-            margin: 20px 0;
-            text-shadow: 0 1px 5px rgba(0,0,0,.8);
-            text-transform: uppercase;
-        }
-        .image-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .image-link {
-            position: relative;
-            display: inline-block;
-            overflow: hidden;
-            margin: 15px 0;
-        }
-        .image-link img {
-            display: block;
-            width: 350px;
-            height: 300px;
-            object-fit: cover;
-        }
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(254,195,37,0.5);
-            opacity: 0;
-            transition: opacity 0.3s;
-            pointer-events: none;
-        }
-        .image-link:hover .overlay {
-            opacity: 1;
-        }
-        .text-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 10px;
-            font-size: 25px;
-            text-align: center;
-            z-index: 1;
-        }
+    .page_title {
+        font-weight: 300;
+        line-height: 120%;
+        margin: 20px 0;
+        text-shadow: 0 1px 5px rgba(0,0,0,.8);
+        text-transform: uppercase;
+    }
+    .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .image-link {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        margin: 15px 0;
+    }
+    .image-link img {
+        display: block;
+        width: 350px;
+        height: 300px;
+        object-fit: cover;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(254,195,37,0.5);
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+    }
+    .image-link:hover .overlay {
+        opacity: 1;
+    }
+    .text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0);
+        color: white;
+        padding: 10px;
+        font-size: 35px;
+        text-align: center;
+        z-index: 1;
+        font-weight: bold;
+        text-decoration: underline;
+        width: 70%; /* Adjust the width as needed */
+        line-height: 1; /* Adjust the line height as needed */
+    }
 </style>
 """
 
