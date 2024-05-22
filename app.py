@@ -6,58 +6,57 @@ import re
 
 style_container = """
 
-
 <style>
-    .page_title {
-        font-weight: 300;
-        line-height: 120%;
-        margin: 20px 0;
-        text-shadow: 0 1px 5px rgba(0,0,0,.8);
-        text-transform: uppercase;
-    }
-    .image-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .image-link {
-        position: relative;
-        display: inline-block;
-        overflow: hidden; /* Hide overflow if images are larger */
-        margin: 15px 0; /* Adjust vertical and horizontal spacing */
-    }
-    .image-link img {
-        display: block;
-        width: 350px; /* Set a fixed width */
-        height: 300px; /* Set a fixed height */
-        object-fit: cover; /* Maintain aspect ratio and fill container */
-    }
-    .overlay {
+        .page_title {
+            font-weight: 300;
+            line-height: 120%;
+            margin: 20px 0;
+            text-shadow: 0 1px 5px rgba(0,0,0,.8);
+            text-transform: uppercase;
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .image-link {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+        .image-link img {
+            display: block;
+            width: 350px;
+            height: 300px;
+            object-fit: cover;
+        }
+        .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(254,195,37,0.5);
-            opacity: 0; /* Initially transparent */
-            transition: opacity 0.3s; /* Add transition for smooth appearance */
-            pointer-events: none; /* Allow clicks to go through the overlay */
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
         }
-    .image-link:hover .overlay {
-        opacity: 1; /* Show overlay on hover */
-    }
-    .text-overlay {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: rgba(0, 0, 0, 0.8);
-        color: white;
-        padding: 10px;
-        font-size: 25px;
-        text-align: center;
-        z-index: 1; /* Ensure text is above the image */
-    }
+        .image-link:hover .overlay {
+            opacity: 1;
+        }
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            font-size: 25px;
+            text-align: center;
+            z-index: 1;
+        }
 </style>
 """
 
@@ -236,6 +235,7 @@ def main():
 
             <a href={placard['link']} class="image-link">
                     <img src={placard['image']} alt="Image">
+                    <div class="overlay"></div>
                     <div class="text-overlay">{placard['name']}</div>
             </a>
 
