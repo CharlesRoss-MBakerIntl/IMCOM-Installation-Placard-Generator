@@ -131,92 +131,92 @@ def main():
 
 
 
-        if name_1 and link_1:
-            st.markdown("##### Enter information for Installation 2:")
-            name_2 = st.text_input(label="Installation Name", value="", key='name_2')
-            image_2 = st.text_input(label="Image Link", value="", key='image_2')
-            link_2 = st.text_input(label="Page Link", value="", key='link_2')
+       
+        st.markdown("##### Enter information for Installation 2:")
+        name_2 = st.text_input(label="Installation Name", value="", key='name_2')
+        image_2 = st.text_input(label="Image Link", value="", key='image_2')
+        link_2 = st.text_input(label="Page Link", value="", key='link_2')
+        
+        st.write('#')
+        st.write('#')
+
+        placard_info['placard_2'] = {'name': name_2,
+                                        'image': image_2,
+                                        'link': link_2}
             
-            st.write('#')
-            st.write('#')
+        if image_2 == '':
+            placard_info['placard_2']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/36536602c0c7482ea8ad5f5e6fbfb897/data'
 
-            placard_info['placard_2'] = {'name': name_2,
-                                            'image': image_2,
-                                            'link': link_2}
+
+
             
-            if image_2 == '':
-                placard_info['placard_2']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/36536602c0c7482ea8ad5f5e6fbfb897/data'
+        st.markdown("##### Enter information for Installation 3:")
+        name_3 = st.text_input(label="Installation Name", value="", key='name_3')
+        image_3 = st.text_input(label="Image Link", value="", key='image_3')
+        link_3 = st.text_input(label="Page Link", value="", key='link_3')
+
+        st.write("#")
+        st.write("#")
+
+        placard_info['placard_3'] = {'name': name_3,
+                                    'image': image_3,
+                                    'link': link_3}
+    
+        if image_3 == '':
+            placard_info['placard_3']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/8d8a7d38f08b40f09817be43e5acc42f/data'
 
 
 
-            if name_2 and link_2:
-                st.markdown("##### Enter information for Installation 3:")
-                name_3 = st.text_input(label="Installation Name", value="", key='name_3')
-                image_3 = st.text_input(label="Image Link", value="", key='image_3')
-                link_3 = st.text_input(label="Page Link", value="", key='link_3')
+                
+        st.markdown("##### Enter information for Installation 4:")
+        name_4 = st.text_input(label="Installation Name", value="", key='name_4')
+        image_4 = st.text_input(label="Image Link", value="", key='image_4')
+        link_4 = st.text_input(label="Page Link", value="", key='link_4')
 
-                st.write("#")
-                st.write("#")
+        st.write("#")
+        st.write("#")
 
-                placard_info['placard_3'] = {'name': name_3,
-                                            'image': image_3,
-                                            'link': link_3}
-            
-                if image_3 == '':
-                    placard_info['placard_3']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/8d8a7d38f08b40f09817be43e5acc42f/data'
+        placard_info['placard_4'] = {'name': name_4,
+                                'image': image_4,
+                                'link': link_4}
 
-
-
-                if name_3 and link_3:
-                    st.markdown("##### Enter information for Installation 4:")
-                    name_4 = st.text_input(label="Installation Name", value="", key='name_4')
-                    image_4 = st.text_input(label="Image Link", value="", key='image_4')
-                    link_4 = st.text_input(label="Page Link", value="", key='link_4')
-
-                    st.write("#")
-                    st.write("#")
-
-                    placard_info['placard_4'] = {'name': name_4,
-                                            'image': image_4,
-                                            'link': link_4}
-            
-                    if image_4 == '':
-                        placard_info['placard_4']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/cb8f7627fb45439f97e73d92690ab023/data'
+        if image_4 == '':
+            placard_info['placard_4']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/cb8f7627fb45439f97e73d92690ab023/data'
 
 
 
-                    if name_4 and link_4:
-                        st.markdown("##### Enter information for Installation 5:")
-                        name_5 = st.text_input(label="Installation Name", value="", key='name_5')
-                        image_5 = st.text_input(label="Image Link", value="", key='image_5')
-                        link_5 = st.text_input(label="Page Link", value="", key='link_5')
+                    
+        st.markdown("##### Enter information for Installation 5:")
+        name_5 = st.text_input(label="Installation Name", value="", key='name_5')
+        image_5 = st.text_input(label="Image Link", value="", key='image_5')
+        link_5 = st.text_input(label="Page Link", value="", key='link_5')
 
-                        st.write("#")
-                        st.write("#")
+        st.write("#")
+        st.write("#")
 
-                        placard_info['placard_5'] = {'name': name_5,
-                                            'image': image_5,
-                                            'link': link_5}
-            
-                        if image_5 == '':
-                            placard_info['placard_5']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/02e9aaaa4a5f4c22b7ce14420696cf0d/data'
+        placard_info['placard_5'] = {'name': name_5,
+                            'image': image_5,
+                            'link': link_5}
+
+        if image_5 == '':
+            placard_info['placard_5']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/02e9aaaa4a5f4c22b7ce14420696cf0d/data'
 
 
-                        if name_5 and link_5:
-                            st.markdown("##### Enter information for Installation 6:")
-                            name_6 = st.text_input(label="Installation Name", value="", key='name_6')
-                            image_6 = st.text_input(label="Image Link", value="", key='image_6')
-                            link_6 = st.text_input(label="Page Link", value="", key='link_6')
+                        
+        st.markdown("##### Enter information for Installation 6:")
+        name_6 = st.text_input(label="Installation Name", value="", key='name_6')
+        image_6 = st.text_input(label="Image Link", value="", key='image_6')
+        link_6 = st.text_input(label="Page Link", value="", key='link_6')
 
-                            st.write("#")
-                            st.write("#")
+        st.write("#")
+        st.write("#")
 
-                            placard_info['placard_6'] = {'name': name_6,
-                                            'image': image_6,
-                                            'link': link_6}
-            
-                            if image_6 == '':
-                                placard_info['placard_6']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/ddb6ac04beda46c2b0dfcd8d48b135f6/data'
+        placard_info['placard_6'] = {'name': name_6,
+                        'image': image_6,
+                        'link': link_6}
+
+        if image_6 == '':
+            placard_info['placard_6']['image'] = 'https://aigp-iigg.obs.army.mil/portal/sharing/rest/content/items/ddb6ac04beda46c2b0dfcd8d48b135f6/data'
 
 
                             
