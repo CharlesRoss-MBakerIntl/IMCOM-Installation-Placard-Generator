@@ -58,7 +58,7 @@ style_container = """
         z-index: 1;
         font-weight: bold;
         text-decoration: underline;
-        width: 70%; /* Adjust the width as needed */
+        width: 80%; /* Adjust the width as needed */
         line-height: 1; /* Adjust the line height as needed */
     }
 </style>
