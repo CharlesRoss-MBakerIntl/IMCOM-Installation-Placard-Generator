@@ -287,12 +287,11 @@ def main():
 
                             
 
-        if final_container != '':
-            submit = st.button("Generate Code")
+        
+        submit = st.button("Generate Code")
             
-            
-            if submit:
-                st.code(final_container)
+        if submit:
+            st.code(final_container)
     
     
     
